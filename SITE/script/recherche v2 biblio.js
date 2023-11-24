@@ -256,14 +256,79 @@ btnSearch.onclick = function(){
 // -------- BOUTONS VALIDER OU ANNULER -------------------------------------------------------------------
 // -------------------------------------------------------------------------------------------------------
 
+
+
 btnValiderEmprunt.onclick = function() {
-    
+    console.log("VALIDATION")
+    var abonne = document.getElementById("abonnement").innerHTML;
+    var emprunt = document.getElementById("bdEmprunt").innerHTML;
+    var retard = document.getElementById("bdRetard").innerHTML;
+    var stock = infoStock.innerHTML;
+
+    if(bEmpruntPossible) {
+        const myPopup = new Popup({
+            id: "my-popup",
+            hideTitle: "true",
+            hideCloseButton: "true",
+            //backgroundColor: "#777E90",
+            //textColor: "white",
+            showImmediately: true,
+            fadeTime: "1s",
+            content: `Emprunt valider pour ${afficheUser.innerHTML} \n {btn-popup-button btnPop}[Fermer]`,
+            loadCallback: () => {
+                const button = document.querySelector(".popup-button");
+                button.addEventListener("click", () => {
+                    window.location.reload();
+                });
+            },
+            css: `
+            .btnPop {
+                background-color: rgb(255, 204, 0);
+            }
+            `,
+        });
+        
+    } else {
+        if(abonne == "non") {
+            const myPopup = new Popup({
+                id: "my-popup",
+                title: "Emprunt impossible",
+                showImmediately: true,
+                fadeTime: "1s",
+                content: `${afficheUser.innerHTML} n'est pas abonné(e)`,
+            });
+        } else if(emprunt > 2) {
+            const myPopup = new Popup({
+                id: "my-popup",
+                title: "Emprunt impossible",
+                showImmediately: true,
+                fadeTime: "1s",
+                content: `${afficheUser.innerHTML} ne peut pas emprunter plus de BD`,
+            });
+        } else if(retard > 0) {
+            const myPopup = new Popup({
+                id: "my-popup",
+                title: "Emprunt impossible",
+                showImmediately: true,
+                fadeTime: "1s",
+                content: `${afficheUser.innerHTML} a une BD en retard`,
+            });
+        } else {
+            const myPopup = new Popup({
+                id: "my-popup",
+                title: "Emprunt impossible",
+                showImmediately: true,
+                fadeTime: "1s",
+                content: `La BD recherchée n'est plus en stock`,
+            });
+        }
+        
+    }
 }
 
 btnAnnulerEmprunt.onclick = function() {
     document.location.reload();
 }
-
 
 
 // -------------------------------------------------------------------------------------------------------

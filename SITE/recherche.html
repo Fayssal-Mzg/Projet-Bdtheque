@@ -14,8 +14,15 @@
     <script src="https://kit.fontawesome.com/f8d0d04345.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
 
+    <script src="script/albums.js"></script>
+    <script src="script/series.js"></script>
+    <script src="script/auteurs.js"></script>
+    <script src="script/infos_bd.js" defer></script> <!-- ce script permet d'avoir toutes les informations nécessaires classés avec des objets dans un tableau -->
+
+    <script src="script/recherche v2.js" defer></script>
+    <!-- <script src="script/recherche.js" defer></script> -->
     
-    <script src="../ressources/data/albums.js"></script>
+    
     <title>Fil Rouge</title>
 </head>
 <body>
@@ -31,10 +38,11 @@
                         <img src="images/BDthèque.png" alt="Logo BDthèque" class="logonav d-md-none d-lg-block">
                     </a>
                     <div class="vr mx-3"></div>
-                    <a class="nav-link active px-3" aria-current="page" href="index.html">Acceuil</a>
-                    <a class="nav-link px-3" href="recherche.html">Rechercher une BD</a>
+                    <a class="nav-link px-3" aria-current="page" href="index.html">Acceuil</a>
+                    <a class="nav-link active px-3" href="recherche.html">Rechercher une BD</a>
                     <a class="nav-link px-3" href="bibliothecaire.html"><i class="fa-solid fa-lock"></i> Espace Bibliothécaire</a>
                     <a class="nav-link px-3" href="administrateur.html"><i class="fa-solid fa-lock"></i> Espace Administrateur</a>
+                    <a class="nav-link px-3" href="connexion.html"><i class="fa-regular fa-user"></i> Connexion</a>
                 </div>
             </div>
         </nav>
@@ -43,21 +51,34 @@
 <!-- RECHERCHE -->
     <div class="container mt-5 text-center">
         <div class="d-flex">
-            <input class="input form-control me-2" id="searchInput" type="text" placeholder="rechercher...">
-            <button class="btn btn-outline-success" type="submit" onclick="recherche()">Search</button>
+            <select name="profession" class="form-select me-1" id="option" style="width: 10em;">
+                <option value="titre">Titre</option>
+                <option value="auteur">Auteur</option>
+                <option value="serie">Série</option>
+            </select>
+
+            <input list="listSearch" class="input form-control me-2" id="searchInput" type="search" placeholder="rechercher...">
+            <button class="btn btn-outline-success" type="button" id="btnSearch">Rechercher</button>
         </div>
         <div>
-            <div id="suggestions" class="suggestions mt-1"></div>  
+            <datalist id="listSearch" class="container">
+                <option id="suggestions" value=""></option>
+            </datalist>
         </div>
     </div>
 
-<!-- TEST RECHERCHE -->
-<form id="auto-suggest" action="#" method="post">
-    <input type="text" class="search" name="search" value="Rechercher..." onfocus="if(this.value=='Rechercher...')this.value=''" onblur="if(this.value=='')this.value='Rechercher...'" autocomplete="off"/>
-    <ul class="suggestions">
-    </ul>
-</form>
-    
+<!-- CARTE -->
+    <div class="d-flex justify-content-center" id="carteCache"></div>
+
+    <!-- <div class="card m-2" style="width: 12rem;" id="carte">
+        <img src="../ressources/albums/Arkezone-01-Le dôme.jpg" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title">Arkezone</h5>
+          <p class="card-text">Le Dôme</p>
+          <a href="#" class="btn btn-primary">En savoir plus...</a>
+        </div>
+      </div> -->
+
 
     <footer class="monFooter text-center mt-5">
     <div class="container p-1 px-5">
@@ -79,7 +100,6 @@
             <span class="ms-5">@2023 Centre culturel des Marmusots. All rights reserved.</span>
     </div>
     </footer>
-    
-    
+    <!-- <script src="../ressources/data/albums.js"></script>     -->
 </body>
 </html>

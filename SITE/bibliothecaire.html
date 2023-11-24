@@ -22,9 +22,9 @@
     <script src="script/infos_bd.js" defer></script> <!-- ce script permet d'avoir toutes les informations nécessaires classés avec des objets dans un tableau -->
 
     <script src="script/utilisateurs.js"></script>
-    <script src="script/recherche v2.js" defer></script>
+    <script src="script/recherche v2 biblio.js" defer></script>
     <!-- <script src="script/recherche.js" defer></script> -->
-    <script src="script/recherche_users.js" defer></script>
+    <!-- <script src="script/recherche_users.js" defer></script> -->
     
 
     <title>Fil Rouge</title>
@@ -61,7 +61,7 @@
                 <div class="col-lg-2 col-md-1">
                     <nav class="navbar navbar-expand-xl">
                         
-                        <div class="bg-white rounded-3 p-xl-3 p-lg-2 p-sm-2 border border-black">
+                        <div class="bg-white rounded-3 p-xl-3 p-lg-2 p-sm-2 shadow">
                             <div class="">
                                 <div class="container-fluid d-flex">
                                     <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#lateralNav" aria-controls="lateralNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -79,19 +79,19 @@
                                     </a>
                                     <hr class="">
                                     <div class="">
-                                        <a href="" class="text-decoration-none" id="emprunt">Emprunt</a>
+                                        <a href="" class="nav-link active" id="emprunt">Emprunt</a>
                                         <hr class="w-75">
                                     </div>
                                     <div class="">
-                                        <a href="" class="text-decoration-none" id="depot">Dépôt</a>
+                                        <a href="bibliothecaire depot.html" class="nav-link" id="depot">Dépôt</a>
                                         <hr class="w-75">
                                     </div>
                                     <div class="">
-                                        <a href="" class="text-decoration-none" id="newBd">Nouvelle BD</a>
+                                        <a href="" class="nav-link" id="newBd">Nouvelle BD</a>
                                         <hr class="w-75">
                                     </div>
                                     <div class="">
-                                        <a href="" class="text-decoration-none" id="logOut">Log Out</a>
+                                        <a href="" class="nav-link" id="logOut">Log Out</a>
                                     </div>
                                 </div>
                             </div>
@@ -147,9 +147,9 @@
                         <h1 class="text-lg-center text-xl-start mb-5">EMPRUNT</h1>
                         <!-- RECHERCHE EMPRUNTEUR -->
                         <div class="container row" id="user">
-                            <div class="col-lg-8 bg-white rounded-3 p-3 d-flex align-items-center">
+                            <div class="col-xl-8 col-lg-7 bg-white rounded-3 p-3 d-flex align-items-center shadow">
                                 <form action="" class="container w-75">
-                                    <h5>Rechercher emprunteur</h5>
+                                    <h5>Rechercher abonné</h5>
                                     <div class="d-flex my-4">
                                         <input list="listSearch" class="input form-control me-2" id="searchUser" type="search" placeholder="rechercher...">
                                     </div>
@@ -162,8 +162,9 @@
                                     </div>
                                 </form>
                             </div>
+                            <!-- block infos à droite -->
                             <div class="col-lg-1 mt-sm-3"></div>
-                            <div class="col bg-white rounded-3 d-flex align-items-center p-3">
+                            <div class="col bg-white rounded-3 d-flex align-items-center p-3 shadow">
                                 <div class="">
                                     <div class="my-3">
                                         <h4 class=""><span id="user">Nom Prénom</span></h4>
@@ -182,10 +183,10 @@
                         </div>
                         <!-- RECHERCHE BD -->
                         <div class="container mt-5 row" id="bd">
-                            <div class="col-lg-8 bg-white rounded-3 p-3 d-flex align-items-center">
+                            <div class="col-xl-8 col-lg-7 bg-white rounded-3 p-3 d-flex align-items-center shadow">
                                 <form action="" class="container w-75">
                                     <h5>Rechercher BD</h5>
-                                    <div class="d-flex my-5">
+                                    <div class="d-flex my-4">
                                         <select name="profession" class="form-select me-1" id="option" style="width: 10em;">
                                             <option value="titre">Titre</option>
                                             <option value="auteur">Auteur</option>
@@ -205,22 +206,32 @@
                             </div>
                             <!-- block infos à droite -->
                             <div class="col-lg-1 mt-sm-3"></div>
-                            <div class="col bg-white rounded-3 d-flex align-items-center p-3">
+                            <div class="col bg-white rounded-3 d-flex align-items-center p-3 shadow">
                                 <div class="">
-                                    <div class="my-3">
-                                        <h6 class=""><span id="infoAuteur"></span>Hugo Pratt</h6>
-                                        <h6><span id="infoTitre"></span>Corto Maltesse</h6>
-                                        <h6><span id="infoSerie"></span>Série de Corto</h6>
+                                    <div class="mb-2">
+                                        <h6 class=""><span id="infoAuteur">Auteur</span></h6>
+                                        <h6><span id="infoTitre">Titre</span></h6>
+                                        <h6><span id="infoSerie">Série</span></h6>
                                     </div>
-                                    <div class="my-5">
-                                        <h6 class=""><span id="infoIsbn"></span>ISBN: HPCM-2456</h6>
-                                        <h6><span id="infoCode"></span>Code : 128</h6>
-                                        <h6><span id="infoNbrBd"></span>3 exemplaires</h6>
-                                    </div>
-                                    <div class="my-3">
-                                        <h6 class=""><span id="infoStock"></span>Pas de stock</h6>
+                                    <div class="mt-3">
+                                        <p>
+                                        ISBN: <b><span id="infoIsbn"></span></b><br>
+                                        Code : <b><span id="infoCode"></span></b><br>
+                                        Nbr d'exemplaires : <b><span id="infoNbrBd"></span></b><br>
+                                        Stock : <b><span id="infoStock"></span><br>
+                                        </b>
                                     </div>
                                 </div>
+                            </div>
+                        </div>
+                        <!-- VALIDATION OU ANNULATION -->
+                        <div class="container mt-5 row" id="bd">
+                            <div class="col-xl-8 col-lg-7 bg-white rounded-3 p-3 d-flex align-items-center shadow">
+                                <form action="" class="container text-center">
+                                    <button class="btn btn-outline-success" type="button" id="btnValiderEmprunt">Valider Emprunt</button>
+                                    <span class="mx-1"></span>
+                                    <button class="btn btn-outline-success" type="reset" id="btnAnnulerEmprunt">Annuler Emrunt</button>
+                                </form>
                             </div>
                         </div>
                     </div>

@@ -292,12 +292,12 @@ function controleUser() {
         console.log("emprunt possible")
         btnValiderEmprunt.style.background = "var(--orange)";
         btnValiderEmprunt.style.color = "black";
-        btnValiderEmprunt.textContent = "Valider Emprunt";
+        btnValiderEmprunt.textContent = "Valider Dépôt";
     } else {
         console.log("emprunt pas possible")
         btnValiderEmprunt.style.background = "red";
         btnValiderEmprunt.style.color = "white";
-        btnValiderEmprunt.textContent = "Emprunt Impossible";
+        btnValiderEmprunt.textContent = "Dépôt Impossible";
     }
 }
 
@@ -325,13 +325,13 @@ function controleEmprunt() {
             //btnValiderEmprunt.style.border = "solid blue";
             btnValiderEmprunt.style.background = "var(--orange)";
             btnValiderEmprunt.style.color = "black";
-            btnValiderEmprunt.textContent = "Valider Emprunt";
+            btnValiderEmprunt.textContent = "Valider Dépôt";
         } else {
             console.log("emprunt pas possible")
             //btnValiderEmprunt.style.border = "solid blue";
             btnValiderEmprunt.style.background = "red";
             btnValiderEmprunt.style.color = "white";
-            btnValiderEmprunt.textContent = "Emprunt Impossible";
+            btnValiderEmprunt.textContent = "Dépôt Impossible";
         }
     } else {
         btnValiderEmprunt.style.background = "red";

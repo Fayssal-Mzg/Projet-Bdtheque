@@ -49,10 +49,6 @@ btnSearchUser.onclick = function(){
     var input = searchUser.value;
     var result = tUsers.filter(item => item.nom.toLocaleLowerCase().includes(input.toLocaleLowerCase()));
 
-    // console.log(search);
-    // console.log(result);
-    // console.log(result[0].nom);
-
     // afficher les infos utilisateur
     afficheUser.textContent = result[0].nom;
 
@@ -75,13 +71,14 @@ btnSearchUser.onclick = function(){
     }
 
     // BD en retard ?
-    if(result[0].bdRetard == "3") {
+    if(result[0].bdRetard > "0") {
         afficheRetard.style.color = "red"
         afficheRetard.textContent = result[0].bdRetard;
     } else {
         afficheRetard.style.color = "green"
         afficheRetard.textContent = result[0].bdRetard;
     }
+    controleUser()
 };
 
 btnAnnulerUser.onclick = function(){
@@ -91,4 +88,43 @@ btnAnnulerUser.onclick = function(){
     afficheRetard.textContent = "";
 };
 
-// prochaine étape : afficher les infos de la bd rechercher (meme principe que pour l'utilisateur)
+function controleUser() {
+    var abonne = document.getElementById("abonnement").innerHTML;
+    var emprunt = document.getElementById("bdEmprunt").innerHTML;
+    var retard = document.getElementById("bdRetard").innerHTML;
+
+    var btnValiderEmprunt = document.querySelector("#btnValiderEmprunt");
+
+    var bEmpruntPossible = false;
+
+    console.log("emprunt : " + emprunt)
+    console.log("retard : " + retard)
+
+    if(abonne == "oui" && emprunt < 3 && retard == 0) {
+        bEmpruntPossible = true;
+    } else {
+        bEmpruntPossible = false;
+    }
+    
+    if(bEmpruntPossible) {
+        console.log("emprunt possible")
+        //btnValiderEmprunt.style.border = "solid blue";
+        btnValiderEmprunt.style.background = "var(--orange)";
+        btnValiderEmprunt.style.color = "black";
+        //btnValiderEmprunt.textContent = "Valider Emprunt";
+    } else {
+        console.log("emprunt pas possible")
+        //btnValiderEmprunt.style.border = "solid blue";
+        btnValiderEmprunt.style.background = "red";
+        btnValiderEmprunt.style.color = "white";
+        //btnValiderEmprunt.textContent = "Emprunt Impossible";
+    }
+}
+    
+    btnValiderEmprunt.onclick = function() {
+        
+    }
+    
+    btnAnnulerEmprunt.onclick = function() {
+        document.location.reload();
+    }

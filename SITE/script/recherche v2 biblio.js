@@ -1,8 +1,6 @@
 // ----- RECUPERATION DE DIVERS CONTENUS DE LA PAGE -----
 
 var btnSearch = document.querySelector("#btnSearch");
-var carte = document.querySelector("#carte");
-var carteCache = document.querySelector("#carteCache");
 var searchInput = document.querySelector("#searchInput");
 
 var infoAuteur = document.querySelector("#infoAuteur");
@@ -25,7 +23,6 @@ choixOption.onclick = function() {
         console.log("input effacé")
         searchInput.value = "";
         searchInput.focus();
-        carteCache.innerHTML = "";
     }
 }
 
@@ -114,11 +111,11 @@ btnSearch.onclick = function(){
         cheminImg = cheminImg.replace(':', '');
         cheminImg = cheminImg.replace("'", '');
 
-        infoAuteur.innerHTML = result[0].nomAuteur;
-        infoTitre.innerHTML = result[0].titre;
-        infoSerie.innerHTML = result[0].nomSerie;
+        infoAuteur.textContent = result[0].nomAuteur;
+        infoTitre.textContent = result[0].titre;
+        infoSerie.textContent = result[0].nomSerie;
         //infoIsbn.innerHTML = result[0].nomAuteur;
-        infoCode.innerHTML = result[0].idAlbum;
+        infoCode.textContent = result[0].idAlbum;
         //infoNbrBd.innerHTML = result[0].nomAuteur;
         //infoStock.innerHTML = result[0].nomAuteur;
         

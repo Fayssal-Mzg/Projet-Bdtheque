@@ -1,11 +1,11 @@
 //console.log("tUsers chargé OK")
 var tUsers = [
 
-    {nom: "Raton Anthony", abonne: "oui", bdEmprunt: "1", bdRetard: "0", cdeUser: "001", amende: "0"},
-    {nom: "Bernou Michel", abonne: "oui", bdEmprunt: "1", bdRetard: "1", cdeUser: "002", amende: "0"},
-    {nom: "Virulo Sandrine", abonne: "non", bdEmprunt: "0", bdRetard: "0", cdeUser: "003", amende: "0"},
-    {nom: "Virulo Margot", abonne: "oui", bdEmprunt: "3", bdRetard: "0", cdeUser: "004", amende: "0"},
-    {nom: "Rami Sophie", abonne: "oui", bdEmprunt: "3", bdRetard: "1", cdeUser: "005", amende: "0"},
+    // {nom: "Raton Anthony", abonne: "oui", bdEmprunt: "1", bdRetard: "0", cdeUser: "001", amende: "0"},
+    // {nom: "Bernou Michel", abonne: "oui", bdEmprunt: "1", bdRetard: "1", cdeUser: "002", amende: "0"},
+    // {nom: "Virulo Sandrine", abonne: "non", bdEmprunt: "0", bdRetard: "0", cdeUser: "003", amende: "0"},
+    // {nom: "Virulo Margot", abonne: "oui", bdEmprunt: "3", bdRetard: "0", cdeUser: "004", amende: "0"},
+    // {nom: "Rami Sophie", abonne: "oui", bdEmprunt: "3", bdRetard: "1", cdeUser: "005", amende: "0"},
     
 
     {
@@ -37,12 +37,12 @@ var tUsers = [
 
 ]
 
-// Récupère le nombre de BDs empruntés
-console.log("Bds empruntées : " + Object.keys(tUsers[5].bdEmprunt).length);
-// Récupère le nombre de BDs en retard
-console.log("BDs en retard : " + Object.keys(tUsers[5].bdRetard).length);
+// // Récupère le nombre de BDs empruntés
+// console.log("Bds empruntées : " + Object.keys(tUsers[5].bdEmprunt).length);
+// // Récupère le nombre de BDs en retard
+// console.log("BDs en retard : " + Object.keys(tUsers[5].bdRetard).length);
 
 // console.log(tUsers[5].nom);
 // console.log(tUsers[5].bdEmprunt);
-// console.log(tUsers[5].bdEmprunt.bd1);
+console.log(tUsers[5].bdEmprunt.bd1.date);
 // console.log(tUsers.length);

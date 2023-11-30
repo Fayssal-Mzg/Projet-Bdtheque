@@ -100,46 +100,6 @@
                 </div>
 
 
-
-                <!-- nav latérale -->
-                <!-- <div class="col-2">
-                    <nav class="navbar navbar-expand-lg">
-                        
-                        <div class="bg-white rounded-3 p-3">
-                            <div class="">
-                                <div class="container-fluid d-flex">
-                                    <h3 class="">Michelle,</h3>
-                                    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#lateralNav" aria-controls="lateralNav" aria-expanded="false" aria-label="Toggle navigation">
-                                        <div class="d-flex">
-                                            <i class="fa-solid fa-caret-down"></i>
-                                        </div>
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="collapse navbar-collapse" id="lateralNav">
-                                <div class="container">
-                                    <hr class="">
-                                    <div class="">
-                                        <a href="" class="text-decoration-none" id="emprunt">Emprunt</a>
-                                        <hr class="w-75">
-                                    </div>
-                                    <div class="">
-                                        <a href="" class="text-decoration-none" id="depot">Dépôt</a>
-                                        <hr class="w-75">
-                                    </div>
-                                    <div class="">
-                                        <a href="" class="text-decoration-none" id="newBd">Nouvelle BD</a>
-                                        <hr class="w-75">
-                                    </div>
-                                    <div class="">
-                                        <a href="" class="text-decoration-none" id="logOut">Log Out</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </nav>
-                </div> -->
-
                 <!-- zone de recherche -->
                 <!-- BLOCK EMPRUNT -->
                 <div class="col" id="blockEmprunt">
@@ -151,6 +111,10 @@
                                 <form action="" class="container w-75">
                                     <h5>Rechercher abonné</h5>
                                     <div class="d-flex my-4">
+                                        <select name="userSearch" class="form-select me-1" id="optionUser" style="width: 10em;">
+                                            <option value="cde">Code client</option>
+                                            <option value="nom">Nom Prénom</option>
+                                        </select>
                                         <input list="listSearch" class="input form-control me-2" id="searchUser" type="search" placeholder="rechercher...">
                                     </div>
                                     <button class="btn btn-outline-success" type="button" id="btnSearchUser">Rechercher</button>

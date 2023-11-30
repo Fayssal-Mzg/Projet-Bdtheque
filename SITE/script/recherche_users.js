@@ -29,9 +29,17 @@ searchUser.focus();
 
 // ----- mise à jour à chaque touche entrée dans la zone de recherche
 searchUser.addEventListener('keyup', function(){
-    var input = searchUser.value;
-    var result = tUsers.filter(item => item.nom.toLocaleLowerCase().includes(input.toLocaleLowerCase()));
-    var suggestion = '';
+    var optionSelect = selectOptionUser();
+
+    if(optionSelect == "cde") {
+        var input = searchUser.value;
+        var result = tUsers.filter(item => item.cdeUser.toLocaleLowerCase().includes(input.toLocaleLowerCase()));
+        var suggestion = '';
+    } else {   
+        var input = searchUser.value;
+        var result = tUsers.filter(item => item.nom.toLocaleLowerCase().includes(input.toLocaleLowerCase()));
+        var suggestion = '';
+    }
 
 
     if(input !='') {
@@ -87,6 +95,16 @@ btnAnnulerUser.onclick = function(){
     afficheEmprunt.textContent = "";
     afficheRetard.textContent = "";
 };
+
+// ----- Récupération de l'option choisie (code client ou nom prénom)
+function selectOptionUser() {
+    var select = document.getElementById("optionUser");
+    var choice = select.selectedIndex;
+    var option = select.options[choice].value;
+    //console.log(option);
+
+    return option;
+}
 
 function controleUser() {
     var abonne = document.getElementById("abonnement").innerHTML;

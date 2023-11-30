@@ -48,7 +48,7 @@ searchUser.addEventListener('keyup', function(){
 
 // Action au bouton recherche utilisateur
 btnSearchUser.onclick = function(){
-    var search = document.querySelector("#searchUser").value;
+    var searchUser = document.querySelector("#searchUser").value;
     var input = searchUser.value;
     var result = tUsers.filter(item => item.nom.toLocaleLowerCase().includes(input.toLocaleLowerCase()));
 

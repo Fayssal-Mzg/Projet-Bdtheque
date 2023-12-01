@@ -7,6 +7,11 @@ var tMediatheque = [
 
 ]
 
+var button = document.getElementById("connexion");
+
+// Ajout des abonnements aux événements
+button.addEventListener("click", getInfo);
+
 function getInfo() {
     var username = document.getElementById("username").value;
     var mdp = document.getElementById("mdp").value;
@@ -14,7 +19,7 @@ function getInfo() {
     for(i = 0; i < tMediatheque.length; i++) {
         if (username == tMediatheque[i].username && mdp == tMediatheque[i].mdp) {
             console.log(username + ", vous êtes connecté");
-            return
+            return;
         } else {
             console.log ("Identifiant ou mot de passe incorrect")
         }
